@@ -11,7 +11,7 @@ $options              = array();
 // -----------------------------------------
 $options[]            = array(
   'name'              => 'frontpage_set_up',
-  'title'             => 'Frontpage Set-up',
+  'title'             => 'Lexco Blog Settings',
   'description'       => 'Set up the front-page of your site',
   'sections'          => array(
 
@@ -73,46 +73,41 @@ $options[]            = array(
                 'title'     => 'Homeheader Background Image',
             ),
         ),
-          
-        array(
-            'name'          => 'enable_homepage_background_gradient',
-            'control'       => array(
-                'type'        => 'cs_field',
-                'options'     => array(
-                    'type'      => 'switcher',
-                    'title'     => 'Enable Background Radient',
-                    'label'     => 'Enable this to see a gradient',
-                    'help'      => 'Lorem Ipsum Dollar',
-                ),
-            ),
-        ),
-          
-        array(
-            'name'      => 'homepage_background_gradient',
-            'default'   => '#555555',
-                'control'   => array(
-                'type'    => 'cs_field',
-                'options' => array(
-                    'type'       => 'color_picker',
-                    'title'      => 'Homepage Background Gradient',
-                    'dependency' => array( 'enable_homepage_background_gradient', '==', 'true' ),
-                ),
-            ),
-        ),
 
-        array(
-            'name'      => 'homepage_text_color',
-            'default'   => '#555555',
+    ),
+),
+    // end: section
+
+      
+    // begin: section
+    array(
+      'name'          => 'about',
+      'title'         => 'About',
+      'settings'      => array(
+
+          array(
+			'name'    => 'about_title',
+            'default' => __( 'About', 'lexco-digital'),
             'control'   => array(
-                'type'      => 'radio',
-                'choices'   => array(
-                    'light'    => __( 'light', 'lexco-digital'),
-                    'dark'    => __( 'dark', 'lexco-digital'),
-                ),
+                'type'    => 'text',
+                'label'   => __( 'About Title', 'lexco-digital'),
+                'title'    => __( 'About Title', 'lexco-digital' ),
+                'desc'     => __( 'Set Title for the about section', 'lexco-digital' ),
             ),
-        ),
+		),
           
         array(
+			'name'    => 'about_description',
+            'default' => __( "Our business is to help you grow. Let's work together.", 'lexco-digital'),
+            'control'   => array(
+                'type'     => 'textarea',
+                'label'   => __( 'About Description', 'lexco-digital'),
+                'title'    => __( 'About Description', 'lexco-digital' ),
+                'desc'     => __( 'Set description for the about section', 'lexco-digital' ),
+            ),
+		),
+          
+          array(
             'name'          => 'enable_call_to_action_button',
             'control'       => array(
                 'type'        => 'cs_field',
@@ -153,42 +148,58 @@ $options[]            = array(
                 ),
             ),
         ),
-
-    ),
-),
-    // end: section
-
-      
-    // begin: section
-    array(
-      'name'          => 'about',
-      'title'         => 'About',
-      'settings'      => array(
-
-          array(
-			'name'    => 'about_title',
-            'default' => __( 'About', 'lexco-digital'),
-            'control'   => array(
-                'type'    => 'text',
-                'label'   => __( 'About Title', 'lexco-digital'),
-                'title'    => __( 'About Title', 'lexco-digital' ),
-                'desc'     => __( 'Set Title for the about section', 'lexco-digital' ),
-            ),
-		),
-          
-        array(
-			'name'    => 'about_description',
-            'default' => __( "Our business is to help you grow. Let's work together.", 'lexco-digital'),
-            'control'   => array(
-                'type'     => 'textarea',
-                'label'   => __( 'About Description', 'lexco-digital'),
-                'title'    => __( 'About Description', 'lexco-digital' ),
-                'desc'     => __( 'Set description for the about section', 'lexco-digital' ),
-            ),
-		),
           
       ),
     ),
+    // end: section
+      
+    // begin: section
+    array(
+      'name'          => 'lexco_blog_colors',
+      'title'         => __( 'Colors & Layout', 'lexco-digital'),
+      'settings'      => array(
+
+        // begin: a field
+          
+        array(
+            'name'      => 'home_page_layout',
+            'default'   => 'two_column',
+            'control'   => array(
+                'label'     => __( 'Content Layout', 'lexco-digital'),
+                'type'      => 'radio',
+                'choices'   => array(
+                    'full_width'    => __( 'Full Width', 'lexco-digital'),
+                    'two_column'    => __( 'Two Column', 'lexco-digital'),
+                ),
+            ),
+        ),
+
+        array(
+            'name'      => 'primary_color',
+            'default'   => 'rgba(0,0,0,.5)',
+            'control'   => array(
+                'type'    => 'cs_field',
+                'options' => array(
+                    'type'  => 'color_picker',
+                    'title' => 'Primary Theme Color',
+                ),
+            ),
+        ),
+
+        array(
+            'name'      => 'homepage_text_color',
+            'default'   => '#555555',
+            'control'   => array(
+                'type'      => 'radio',
+                'title'     => 'Header Text Color',
+                'choices'   => array(
+                    'light'    => __( 'light', 'lexco-digital'),
+                    'dark'    => __( 'dark', 'lexco-digital'),
+                ),
+            ),
+        ),
+    ),
+),
     // end: section
 
   ),

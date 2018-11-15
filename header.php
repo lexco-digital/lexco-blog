@@ -18,4 +18,4 @@
     
     <div class="sitewrapper">
         
-        <a href="#" class="back-to-top uk-totop uk-icon-button" style="z-index: 1000;" uk-icon="chevron-up" uk-scroll></a>
+        <a href="#" class="back-to-top uk-totop uk-icon-button uk-box-shadow-medium" style="z-index: 1000;" uk-icon="chevron-up" uk-scroll></a>

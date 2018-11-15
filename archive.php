@@ -10,27 +10,24 @@ get_header(); ?>
 
 <div>
 
-	<?php if ( have_posts() ) :
-    do_action( 'lexco_before_header' );
-    the_archive_title( '<h1 class="page-title">', '</h1>' );
-    do_action( 'lexco_after_header' );
+	<?php 
+    if ( have_posts() ) :
+        do_action( 'lexco_before_simple_header' );
+        the_archive_title( '<h1>', '</h1>' );
+        do_action( 'lexco_after_simple_header' );
+    endif; 
     ?>
-	<?php endif; ?>
 
 	<div class="uk-section uk-container">
 		<div class="uk-child-width-expand@s uk-grid-medium" uk-grid>
 
-		<?php
-		if ( have_posts() ) :
-		?>
+		<?php if ( have_posts() ) : ?>
+            <div class="uk-width-2-3@s uk-margin-auto">
 			<?php
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-			?>
-                <div class="uk-width-2-3@s uk-margin-auto">
-                    <div class="uk-card uk-card-default uk-margin-auto uk-margin-bottom uk-padding">
+			while ( have_posts() ) : the_post();
+                ?>
+                <div class="uk-card uk-card-default uk-margin-auto uk-margin-bottom uk-padding">
                     <div>
                         <a href="<?php the_permalink(); ?>">
                             <h3 style="margin-top: 0; margin-bottom: 5px;"> 
@@ -57,13 +54,16 @@ get_header(); ?>
                         <?php _e( 'Read More',  'lexco-digital' ); ?>
                     </a>
                 </div>
+                
+                <?php endwhile; ?>
+            
             </div>
 
             <?php do_action( 'lexco_get_sidebar' ); ?>
             
         </div><!-- #main -->
         
-			<?php endwhile;
+			<?php
 	
             the_posts_pagination( 
                 array(

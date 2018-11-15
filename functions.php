@@ -364,7 +364,22 @@ function lexco_digital_wrapper_end() {
         </div>';
 }
 
+add_action( 'lexco_before_simple_header', 'lexco_simple_header_start', 10);
+add_action( 'lexco_after_simple_header', 'lexco_simple_header_end', 10);
+function lexco_simple_header_start() {
+?>
+    <div style="border-bottom: 1px solid #eee;">
+        <div class="uk-container uk-section uk-section-xsmall uk-flex uk-flex-center uk-flex-middle" >
+            <?php
+}
 
+function lexco_simple_header_end() {
+    ?>
+        </div>
+    </div>
+<?php   
+}
+        
 /**
  *
  * This hooked is used to set up the header for all pages of you the website. 
@@ -373,6 +388,8 @@ function lexco_digital_wrapper_end() {
  * In the 'Theme Options' Panel. 
  *
  */
+add_action( 'lexco_before_header', 'lexco_header_start', 10);
+add_action( 'lexco_after_header', 'lexco_header_end', 10);
 function lexco_header_start() {
     
     $header_color = cs_get_option( 'header_color' );
@@ -413,18 +430,19 @@ function lexco_header_end() {
         
     }
 }
-add_action( 'lexco_before_header', 'lexco_header_start', 10);
-add_action( 'lexco_after_header', 'lexco_header_end', 10);
-
 
 // Lexco Call To Action
 function lexco_call_to_action_start() { 
 ?>
     <div class="uk-section uk-container">
-        <div class="uk-position-relative uk-flex uk-background-cover uk-overflow-hidden uk-width-2-3@s uk-margin-auto uk-box-shadow-medium" uk-parallax="bgy: -200; viewport: 0.9; blur: 0;" style="background-image: url('<?php echo cs_get_option( 'cta_color' )['cta_div_background']['image']; ?>');" uk-img>
-            <div class="uk-overlay uk-position-cover" style="background-color: <?php echo cs_get_option( 'cta_color' )['cta_div_background']['color']; ?>; z-index: -1;"></div>
+        <div class="uk-position-relative uk-flex uk-background-cover uk-overflow-hidden uk-width-2-3@s uk-margin-auto uk-box-shadow-medium">
+            <div class="uk-overlay uk-position-cover" style="background-color: <?php echo cs_get_customize_option( 'homepage_background' ); ?>"></div>
                 <div class="uk-padding uk-width-1-1">
-                    <div class="<?php lexco_call_to_action_text() ?>">
+                    <div style="z-index: 2;" class="z-index-10 <?php 
+                                if ( cs_get_customize_option('homepage_text_color') == 'light' ) {
+                                    lexco_add_light_text();
+                                } 
+                                ?>">
                                 <?php
                     }
 

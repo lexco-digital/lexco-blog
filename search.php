@@ -15,13 +15,13 @@ $meta_data = get_post_meta( get_the_ID(), '_custom_page_options', true );
 $thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
 ?>
 
-<?php do_action( 'lexco_before_header' ); ?>
+<?php do_action( 'lexco_before_simple_header' ); ?>
     <h1 class="big-text">
         <?php 
             printf( __( 'Search Results for: %s', 'lexco-digital' ), get_search_query() ); 
         ?>
     </h1>
-<?php do_action( 'lexco_after_header' ); ?>
+<?php do_action( 'lexco_after_simple_header' ); ?>
 
 <?php 
 if ( have_posts() ) : ?>
