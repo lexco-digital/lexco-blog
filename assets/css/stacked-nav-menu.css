@@ -1,0 +1,76 @@
+nav.nav-container.alternate .site-logo {
+    display: inline-block;
+    margin: 1.5rem auto 1rem auto;
+}
+.lexco-head {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.single-title {
+    padding: 2em;
+}
+#longmenu li {
+    float: none;
+    display: inline-block;
+}
+#longmenu li .sub-menu li {
+    display: block;
+}
+.nav-container.woo-navmenu {
+    background: white;
+    position: static;
+}
+
+.alternate-lexco-logo a,
+.alternate-lexco-logo img {
+    display: block;
+}
+
+.alternate.nav-container img {
+    max-height: 3rem;
+}
+
+div.nav-container .flex-contain.alternate-navmenu {
+	padding-bottom: 0;
+}
+.alternate-navmenu div.flex {
+	padding: 0;
+}
+.woocommerce .woocommerce-breadcrumb {
+	margin-top: 0;
+}
+.woo-header {
+	margin-top: 0;
+}
+@media only screen and (min-width: 768px) {
+    .alternate-navmenu ul#longmenu li.mobile-menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .main-menu-container {
+        position: relative;
+    }
+    
+    #longmenu {
+        z-index: 999;
+        top: 160px;
+        position: absolute;
+        height: auto;
+    }
+    #longmenu li {
+        float: none;
+        display: block;
+        z-index: 999;
+    }
+    
+    #longmenu li .sub-menu {
+        z-index: 999;
+    }
+    #menubtn {
+        padding: 1.25rem 1rem;
+    }
+    
+}
