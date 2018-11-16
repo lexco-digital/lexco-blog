@@ -250,6 +250,27 @@ $options[]            = array(
     ), 
 ),
     // end: section
+      
+      
+      // begin: section
+    array(
+      'name'          => 'google_ad',
+      'title'         => __( 'Google Ads', 'lexco-digital'),
+      'settings'      => array(
+
+        // begin: a field
+          
+        array(
+            'name'      => 'google_analytics',
+            'default'   => '',
+            'control'   => array(
+                'label'     => __( 'Google Analytics', 'lexco-digital'),
+                'type'      => 'text',
+            ),
+        ),   
+    ), 
+),
+    // end: section
 
   ),
   // end: sections

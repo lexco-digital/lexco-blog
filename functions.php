@@ -241,9 +241,9 @@ function lexco_head_section() { ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     
-    <?php $id = cs_get_option( 'google_tracking' );
+    <?php $id = cs_get_customize_option( 'google_analytics' );
     
-    if ( cs_get_option ( 'enable_google_analytics' ) ) { ?>
+    if ( !empty( cs_get_customize_option( 'google_analytics' ) ) ) { ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $id ?>"></script>
         <script>
@@ -251,7 +251,7 @@ function lexco_head_section() { ?>
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', '<?php echo $id ?>' );
+            gtag( 'config', '<?php echo $id ?>' );
         </script>
     <?php }
                                
