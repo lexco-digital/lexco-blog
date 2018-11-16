@@ -23,7 +23,7 @@ if ( have_posts() ) :
         
         <div class="uk-child-width-expand@s uk-grid" uk-grid>
             <div>
-                <div>
+                <div class="uk-card uk-card-default uk-padding">
                     <?php the_content(); ?>
                 </div>
             </div>

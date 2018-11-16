@@ -17,18 +17,18 @@ $subscribe_div = cs_get_option( 'subscribe_tab' );
 
     <h1 class="text-center big-text"> 
         <?php 
-        _e( stripslashes( cs_get_option( 'subscribe_div_header' ) ), 'lexco-digital'); 
+        _e( stripslashes( cs_get_customize_option( 'subscribe_box_title' ) ), 'lexco-digital'); 
         ?> 
     </h1>
 
     <div class="social-form">
         <p class="text-center"> 
             <?php 
-            _e( stripslashes( cs_get_option( 'subscribe_div_text' ) ), 'lexco-digital');
+            _e( stripslashes( cs_get_customize_option( 'subscribe_box_description' ) ), 'lexco-digital');
             ?> 
         </p>
 
-        <?php echo do_shortcode( stripslashes( cs_get_option( 'subcribe_div_shortcode' ) ) ); ?>
+        <?php echo do_shortcode( stripslashes( cs_get_customize_option( 'subscribe_box_form' ) ) ); ?>
     </div><!-- .social-form -->
 
 <?php do_action( 'lexco_after_call_to_action' ); ?>

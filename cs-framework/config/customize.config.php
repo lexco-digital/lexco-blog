@@ -185,20 +185,69 @@ $options[]            = array(
                 ),
             ),
         ),
+          
+        array(
+            'name'      => 'body_background',
+            'default'   => '#fff',
+            'control'   => array(
+                'type'    => 'cs_field',
+                'options' => array(
+                    'type'  => 'color_picker',
+                    'title' => 'Body Background Color',
+                ),
+            ),
+        ),
 
         array(
             'name'      => 'homepage_text_color',
             'default'   => '#555555',
             'control'   => array(
                 'type'      => 'radio',
-                'title'     => 'Header Text Color',
+                'label'     => __( 'Header Text Color', 'lexco-digital'),
                 'choices'   => array(
                     'light'    => __( 'light', 'lexco-digital'),
                     'dark'    => __( 'dark', 'lexco-digital'),
                 ),
             ),
-        ),
+        ),  
     ),
+),
+      
+      // begin: section
+    array(
+      'name'          => 'subscribe-box',
+      'title'         => __( 'Subscribe Box', 'lexco-digital'),
+      'settings'      => array(
+
+        // begin: a field
+          
+        array(
+            'name'      => 'subscribe_box_title',
+            'default'   => 'Subscribe',
+            'control'   => array(
+                'label'     => __( 'Subscribe Box Title', 'lexco-digital'),
+                'type'      => 'text',
+            ),
+        ),
+
+        array(
+            'name'      => 'subscribe_box_description',
+            'default'   => 'Subscribe To My Blog',
+            'control'   => array(
+                'type'    => 'text',
+                'label'   => __( 'Subscribe Box Description', 'lexco-digital'),
+            ),
+        ),
+
+        array(
+            'name'      => 'subscribe_box_form',
+            'default'   => '',
+            'control'   => array(
+                'type'      => 'textarea',
+                'label'     => __( 'Subscribe Box Form', 'lexco-digital'),
+            ),
+        ),    
+    ), 
 ),
     // end: section
 

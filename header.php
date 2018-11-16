@@ -12,7 +12,7 @@
 <head>
     <?php wp_head(); ?>
 </head>   
-<body <?php body_class( 'uk-offcanvas-content' ); ?> >
+<body <?php body_class(' uk-offcanvas-content' ); ?> style="background: <?php echo cs_get_customize_option('body_background') ?>">
     
     <?php get_template_part( 'template-parts/header/long-nav-menu' ); ?>
     

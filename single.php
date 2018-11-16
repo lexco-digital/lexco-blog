@@ -40,7 +40,7 @@ get_header(); ?>
         <div class="uk-container uk-section">
             <div class="uk-child-width-expand@s uk-grid-medium" uk-grid>
                 <div class="uk-width-2-3@s <?php lexco_body_layout() ?>">
-                    <div>
+                    <div class="uk-card uk-card-default uk-padding">
                         <?php the_content(); ?>
                     </div>
                 </div>
