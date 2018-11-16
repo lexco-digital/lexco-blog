@@ -51,15 +51,10 @@ get_header(); ?>
         </div>
         
         <div class="uk-section uk-section-small uk-text-center uk-padding-remove-top">
-            
-            <?php 
-                /* If the social sharing tab is actibe, display it */
-                if ( cs_get_option( 'enable_social_bar' ) == true ) {
-                    ?>
-                    <h3>Share</h3>
-                    <?php 
-                    get_template_part( 'template-parts/page/social-share' );
-                }
+                
+            <h3>Share</h3>
+            <?php
+            get_template_part( 'template-parts/page/social-share' );
 
             /* If tags exist, we display the tags */
             if ( get_the_tags() ) { 
